@@ -71,8 +71,8 @@ if recv[:3] != '250':
     print('RCPT TO:\t250 reply not received from server.')
 # Fill in end
 
-# # Send DATA command and print server response.
-# # Fill in start
+# Send DATA command and print server response.
+# Fill in start
 data = "DATA\r\n"
 # clientSocket.send(data.encode())
 securedSocket.write("DATA\r\n".encode())
@@ -82,22 +82,22 @@ if recv[:3] != '354':
     print('DATA:\t354 reply not received from server.')
 # Fill in end
 
-# # Send message data.
-# # Fill in start
+# Send message data.
+# Fill in start
 securedSocket.write(msg.encode())
-# # Fill in end
+# Fill in end
 
-# # Message ends with a single period.
-# # Fill in start
+# Message ends with a single period.
+# Fill in start
 securedSocket.write(endmsg.encode())
 recv = securedSocket.read(1024).decode()
 print('MSG:\t' + recv)
 if recv[:3] != '250':
     print('MSG:\t250 reply not received from server.')
-# # Fill in end
+# Fill in end
 
-# # Send QUIT command and get server response.
-# # Fill in start
+# Send QUIT command and get server response.
+# Fill in start
 quit = "QUIT \r\n"
 securedSocket.write(quit.encode())
 recv = securedSocket.read(1024).decode()
