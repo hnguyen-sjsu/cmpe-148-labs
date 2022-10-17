@@ -91,7 +91,7 @@ def sendOnePing(mySocket, destAddr, ID):
 
     header = struct.pack("bbHHh", ICMP_ECHO_REQUEST, 0, myChecksum, ID, 1)
     packet = header + data
-    print(mySocket)
+
     # AF_INET address must be tuple, not str
     mySocket.sendto(packet, (destAddr, 1))
     # Both LISTS and TUPLES consist of a number of objects
