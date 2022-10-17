@@ -2,7 +2,6 @@ from socket import *
 import os
 import sys
 import struct
-from tabnanny import check
 import time
 import select
 import binascii
