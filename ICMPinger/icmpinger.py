@@ -41,7 +41,7 @@ def receiveOnePing(mySocket, ID, timeout, destAddr):
         howLongInReset = (time.time() - startedSelect)
 
         if whatReady[0] == []:  # Timeout
-            return '1 - Request timed out.'
+            return 'Request timed out.'
 
         timeReceived = time.time()
         recPacket, addr = mySocket.recvfrom(1024)
@@ -91,7 +91,7 @@ def sendOnePing(mySocket, destAddr, ID):
 
     header = struct.pack("bbHHh", ICMP_ECHO_REQUEST, 0, myChecksum, ID, 1)
     packet = header + data
-
+    print(mySocket)
     # AF_INET address must be tuple, not str
     mySocket.sendto(packet, (destAddr, 1))
     # Both LISTS and TUPLES consist of a number of objects
